@@ -1,10 +1,11 @@
-const links = document.querySelectorAll(".header-menu__item a");
-const cardDetailsLink = document.querySelector(".card-details__link-characteristics");
+const linksMenu = document.querySelectorAll(".header-menu__item a");
+const linkCharacteristics = document.querySelector(".card-details__link-characteristics");
+const allLinks = [...linksMenu, linkCharacteristics];
 
 // patch all methods polyfill
 seamless.polyfill();
 
-links.forEach((link) => {
+allLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
     const id = link.getAttribute("href").substring(1);
@@ -13,23 +14,9 @@ links.forEach((link) => {
     if (section) {
       seamless.elementScrollIntoView(section, {
         behavior: "smooth",
-        block: "center",
-        inline: "center",
+        block: "start",
+        inline: "start",
       })
     }
   })
-});
-
-cardDetailsLink.addEventListener("click", (event) => {
-  event.preventDefault();
-  const id = cardDetailsLink.getAttribute("href").substring(1);
-  const section = document.getElementById(id);
-
-  if (section) {
-    seamless.elementScrollIntoView(section, {
-      behavior: "smooth",
-      block: "center",
-      inline: "center",
-    })
-  }
 });
