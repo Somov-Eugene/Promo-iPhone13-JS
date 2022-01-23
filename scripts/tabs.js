@@ -34,8 +34,10 @@ const tabsDetails = () => {
 
     const title = `Смартфон Apple iPhone 13 Pro ${memoryPhone}GB ${colorPhone}`;
 
+    document.title = title;
+
     tabsTitle.textContent = title;
-    tabsMemory.textContent = `Встроенная память (ROM) ${memoryPhone} ГБ`
+    tabsMemory.textContent = `Встроенная память (ROM) ${memoryPhone} ГБ`;
     tabsPrice.textContent = `${pricePhone}₽`;
 
     tabsImage.setAttribute("alt", title);
@@ -54,9 +56,7 @@ const tabsDetails = () => {
   };
 
   tabs.forEach((tab, index) => {
-    tab.addEventListener("click", (e) => {
-      changeActiveTab(index);
-    });
+    tab.addEventListener("click", () => changeActiveTab(index));
   });
 
   // Show first tab
