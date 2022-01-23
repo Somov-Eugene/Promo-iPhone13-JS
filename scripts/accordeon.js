@@ -21,10 +21,11 @@ const accordeon = () => {
     // Event 'Click' on accordeon tab
     chButton.addEventListener("click", () => {
       if (chContent.classList.contains("open")) {
+        // Clicked on current tab
         chContent.style.height = "";
       } else {
-        // Close all accordeon tabs
-        closeAccordeonTabs();
+        // Clicked on other tab
+        closeAccordeonTabs(); // Close all accordeon tabs
         // Set height accordeon's content
         chContent.style.height = chContent.scrollHeight + "px";
       }
