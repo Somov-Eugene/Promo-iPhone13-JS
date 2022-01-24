@@ -1,5 +1,5 @@
 const getData = () => {
-  const URL = "../cross-sell-dbase/dbase.json";
+  const URL = "/cross-sell-dbase/dbase.json";
   const list = document.querySelector(".cross-sell__list");
   const btn = document.querySelector(".cross-sell__add");
 
